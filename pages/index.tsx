@@ -9,7 +9,7 @@ import { PulseLoader } from 'react-spinners'
 const inter = Inter({ subsets: ['latin'] })
 import { useTheme } from '@/components/Themes'
 export default function Home() {
-  const [itemToShow, setItemToShow] = useState<number>(8)
+  const [itemToShow, setItemToShow] = useState<number>(10)
   const [countries, setCountries] = useState<any>([])
   const [filterCountries, setFilterCountries] = useState<any>([])
   const [regions, setRegions] = useState<string>('')
@@ -23,7 +23,7 @@ export default function Home() {
 
       if (reachBottom) {
         setTimeout(() => {
-          let currentItemToShow = itemToShow + 8
+          let currentItemToShow = itemToShow + 10
           setItemToShow(currentItemToShow)
           setReachBottom(false)
         }, 2000)
