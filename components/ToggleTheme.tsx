@@ -23,7 +23,7 @@ function ToggleTheme() {
       {theme === 'dark' ? (
         <BsFillMoonFill className='text-textBW text-lg sm:text-lg text-violet' />
       ) : (
-        <BsFillSunFill className='text-textBW text-lg sm:text-lg text-orange' />
+        <BsFillSunFill className='text-textBW text-lg sm:text-lg text-yellow' />
       )}
       <p className='text-textBW sm:text-lg'>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</p>
     </div>

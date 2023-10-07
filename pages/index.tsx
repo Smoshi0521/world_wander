@@ -16,6 +16,7 @@ export default function Home() {
   const [searchValue, setSearchValue] = useState<any>('')
   const [reachBottom, setReachBottom] = useState(false)
   const [themeColor, setThemeColor] = useState(false)
+  const [clickSearch, setClickSearch] = useState(false)
   const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     const loadMore = () => {
@@ -119,14 +120,14 @@ export default function Home() {
 
         <div className='flex-1 flex-wrap pb-5 grid grid-cols-1 px-5 mt-10 gap-5 place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-16 place-content-between sm:px-0 w-full'>
           {
-            countries.length !== 0 ?
-              countries.slice(0, itemToShow).map((item: any) => (
-                <Country key={item?.name?.common} itemToShow={itemToShow} name={item?.name?.common} population={item?.population} region={item?.region} capital={item.capital} flags={item.flags.png} />
-              ))
-              :
+            countries.length === 0 && searchValue !== '' ?
               <div className='w-full h-screen'>
                 <p className='text-textBW font-bold text-2xl'>No result found</p>
               </div>
+              :
+              countries.slice(0, itemToShow).map((item: any) => (
+                <Country key={item?.name?.common} itemToShow={itemToShow} name={item?.name?.common} population={item?.population} region={item?.region} capital={item.capital} flags={item.flags.png} />
+              ))
           }
         </div>
 

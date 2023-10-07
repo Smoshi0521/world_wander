@@ -22,11 +22,14 @@ const config: Config = {
       elements:"var(--elements)",
       input:"var(--input)",
       textBW:"var(--text)",
+      hoverBG:"var(--hover)",
+      hoverText:"var(--hoverText)",
       white:"#ffffff",
       transparent: "transparent",
       red: "#ef4444",
-      orange:"#eab308",
+      yellow:"#eab308",
       violet: "#0284c7",
+      black: "#111517",
 
     },
     fontWeight: {
@@ -41,7 +44,8 @@ const config: Config = {
       extrabold: '800',
       'extra-bold': '800',
       black: '900',
-    }
+    },
+
   },
   plugins: [],
 }

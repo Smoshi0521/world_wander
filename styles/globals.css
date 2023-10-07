@@ -8,6 +8,8 @@
     --elements:	#ffffff;
     --text: 	#111517;
     --input: 	#858585;
+    --hover:#2b3945;
+    --hoverText:#ffffff;
 
   }
   
@@ -16,6 +18,8 @@
     --background-color:#202c37;
     --elements:	#2b3945;
     --text: #ffffff;
+    --hover:#fafafa;
+    --hoverText:#111517;
   }
   body{
     @apply bg-background

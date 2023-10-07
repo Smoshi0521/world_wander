@@ -27,15 +27,15 @@ function Filter({ setRegions }: Props) {
   }
   const allRegions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
   return (
-    <div className='flex flex-col w-full max-w-[240px] gap-1 mt-5 sm:mt-8 shadow-lg relative  z-0'>
-      <button onClick={open} className='bg-elements flex items-center justify-between px-4 py-4 w-full text-textBW rounded-md'>
-        <p className='font-medium text-lg'> {filterValue === '' ? "Filter by Region" : filterValue}</p>
+    <div className='flex flex-col w-full max-w-[240px] gap-1 mt-5 sm:mt-8 shadow-lg relative'>
+      <button onClick={open} className='bg-elements flex items-center justify-between px-4 py-4 w-full text-textBW rounded-md z-10'>
+        <p className='font-medium text-md md:text-lg'> {filterValue === '' ? "Filter by Region" : filterValue}</p>
         <div className='flex items-center gap-1 relative z-20'>
-          <button onClick={clearFilter} className='z-0 p-1 hover:text-red'>
-            <AiOutlineClose className={`${none ? "opacity-100" : "opacity-0"} text-md  duration-200 z-20`} />
-          </button>
-          <BiChevronDown className="text-lg" />
+          <BiChevronDown className={`text-lg transition duration-200 ${showOption ? "rotate-1" : "rotate-180"}`} />
         </div>
+      </button>
+      <button onClick={clearFilter} className={`p-1  ${none ? "opacity-100 z-20" : "opacity-0 z-0"} absolute right-10 top-[17px]`}>
+        <AiOutlineClose className={`hover:text-red text-md text-textBW  duration-200 z-20`} />
       </button>
       {
         showOption ?

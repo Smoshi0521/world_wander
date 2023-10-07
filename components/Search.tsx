@@ -29,11 +29,11 @@ function Search({ setSearchValue }: Props) {
         {
           search === "" ?
             <button type='button'>
-              <HiSearch className="text-textBW mx-5 text-[28px]" />
+              <HiSearch className="text-textBW mx-5 text-xl md:text-[28px]" />
             </button>
             :
             <button onClick={() => emptySearch()} type='button'>
-              <AiOutlineClose type="button" className="text-textBW mx-5 text-[28px]" />
+              <AiOutlineClose type="button" className="text-textBW mx-5 text-xl md:text-[20px]" />
             </button>
         }
         <input onChange={(e) => setSearch(e.target.value)} value={search} type='text' name='searchCountry' className='bg-transparent outline-none py-3 w-full text-textBW h-full' placeholder='Search for a country...' />

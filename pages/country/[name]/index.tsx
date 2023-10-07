@@ -52,7 +52,7 @@ export default function Country() {
     if (country && country.currencies) {
       setCurrencies(country.currencies[0]?.code);
     }
-  }, [country,capitalName]);
+  }, [country, capitalName]);
 
   return (
     <div className='flex flex-col overflow-x-hidden'>
@@ -67,7 +67,7 @@ export default function Country() {
 
         {
           country?.length !== 0 && (
-            <div className='flex flex-col items-center w-full gap-10 text-textBW mt-14 pb-10 md:pb-0 lg:justify-between xl:flex-row xl:items-start lg:gap-10 flex-1'>
+            <div className='flex flex-col items-center w-full gap-10 text-textBW mt-14 pb-10 md:pb-0 lg:justify-between xl:justify-evenly xl:flex-row xl:items-center lg:gap-10 flex-1'>
               <img src={country?.flags?.png} className='w-full max-w-[700px] xl:max-w-[550px] sm:min-h-[400px] max-h-[400px]' width={0} height={0} />
 
 
@@ -125,7 +125,9 @@ export default function Country() {
                       <div className='flex items-center gap-2 sm:gap-3 flex-wrap'>
                         {
                           borderCountries.map((country: any, index: number) => (
-                            <button onClick={() => checkBorderCountry(country.capital)} key={country.name} className='bg-elements text-center sm:text-lg px-5 py-1 shadow-2xl rounded-md'>
+                            <button onClick={() => checkBorderCountry(country.capital)} key={country.name} style={{
+                              boxShadow: "0px 5px 10px 5px rgba(0, 0, 0, 0.1)"
+                            }} className='bg-elements text-center sm:text-lg px-5 py-1 rounded-md hover:scale-95 hover:bg-hoverBG hover:text-hoverText transition duration-300'>
                               {country?.name}
                             </button>
                           ))
