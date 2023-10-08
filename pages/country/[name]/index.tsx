@@ -68,7 +68,8 @@ export default function Country() {
         {
           country?.length !== 0 && (
             <div className='flex flex-col items-center w-full gap-10 text-textBW mt-14 pb-10 md:pb-0 lg:justify-between xl:justify-evenly xl:flex-row xl:items-center lg:gap-10 flex-1'>
-              <img src={country?.flags?.png} className='w-full max-w-[700px] xl:max-w-[550px] sm:min-h-[400px] max-h-[400px]' width={0} height={0} />
+
+              <img src={country?.flags?.png} className='w-full  max-w-[700px] lg:w-5/6 sm:min-h-[400px] max-h-[400px]' width={0} height={0} />
 
 
               <div className=' flex flex-col w-full max-w-[700px] gap-5 xl:px-12'>
@@ -98,7 +99,7 @@ export default function Country() {
                       <p className='font-thin text-md sm:text-lg'>{country?.capital}</p>
                     </li>
                   </ul>
-                  <ul className='flex flex-col gap-2 mt-10 sm:mt-0'>
+                  <ul className='flex flex-col gap-2 sm:gap-4 mt-10 sm:mt-0'>
                     <li className='flex items-center gap-1'>
                       <p className='text-md sm:text-lg font-nunito'>Top Level Domain: </p>
                       <p className='font-thin text-md sm:text-lg'>{country?.topLevelDomain}</p>
@@ -120,14 +121,14 @@ export default function Country() {
 
                 {
                   country?.borders && (
-                    <div className='flex flex-col lg:flex-row mt-10 lg:justify-between gap-5 lg:gap-2'>
+                    <div className='flex flex-col lg:flex-row mt-10  gap-5 lg:gap-2'>
                       <p className='text-xl font-medium w-full max-w-[160px]'>Border Countries:</p>
                       <div className='flex items-center gap-2 sm:gap-3 flex-wrap'>
                         {
                           borderCountries.map((country: any, index: number) => (
                             <button onClick={() => checkBorderCountry(country.capital)} key={country.name} style={{
                               boxShadow: "0px 5px 10px 5px rgba(0, 0, 0, 0.1)"
-                            }} className='bg-elements text-center sm:text-lg px-5 py-1 rounded-md hover:scale-95 hover:bg-hoverBG hover:text-hoverText transition duration-300'>
+                            }} className='bg-elements text-center sm:text-md px-5 py-1 rounded-md hover:scale-95 hover:bg-hoverBG hover:text-hoverText transition duration-300'>
                               {country?.name}
                             </button>
                           ))

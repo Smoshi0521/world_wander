@@ -48,8 +48,7 @@ export default function Home() {
       if (regions !== '') {
         let allCountries = filterCountries
         let newCountries = allCountries.filter((item: any) => item.region === regions)
-        console.log(newCountries)
-        setItemToShow(8)
+        setItemToShow(10)
         setCountries(newCountries)
       }
       else {
@@ -63,11 +62,11 @@ export default function Home() {
     const handleSearchCountry = () => {
       let allCountries = filterCountries
       if (regions !== '') {
-        let searchedCountry = allCountries.filter((item: any) => item?.name?.common.toLowerCase() === searchValue.toLowerCase() && regions === item.region)
+        let searchedCountry = allCountries.filter((item: any) => item?.name?.common.toLowerCase().includes(searchValue.toLowerCase()) && regions === item.region)
         setCountries(searchedCountry)
       }
       else {
-        let searchedCountry = allCountries.filter((item: any) => item?.name?.common.toLowerCase() === searchValue.toLowerCase())
+        let searchedCountry = allCountries.filter((item: any) => item?.name?.common.toLowerCase().includes(searchValue.toLowerCase()))
         setCountries(searchedCountry)
       }
       if (searchValue === '') {
@@ -118,7 +117,7 @@ export default function Home() {
           )
         }
 
-        <div className='flex-1 flex-wrap pb-5 grid grid-cols-1 px-5 mt-10 gap-5 place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:gap-16 place-content-between sm:px-0 w-full'>
+        <div className='flex-1 flex-wrap pb-5 grid grid-cols-1 px-5 mt-10 gap-14 place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 lg:gap-16 place-content-between sm:px-0 w-full'>
           {
             countries.length === 0 && searchValue !== '' ?
               <div className='w-full h-screen'>

@@ -25,7 +25,7 @@ function Search({ setSearchValue }: Props) {
 
   return (
     <form onSubmit={getSearchValue} className='mt-8 w-full max-w-[500px] flex items-center gap-1'>
-      <div className='flex items-center bg-elements pl-3 pr-5 w-full rounded-lg py-2 shadow-2xl'>
+      <div className='flex items-center bg-elements pl-3 pr-5 w-full rounded-lg py-2 shadow-2xl border border-transparent duration-100 focus-within:border focus-within:border-violet'>
         {
           search === "" ?
             <button type='button'>
